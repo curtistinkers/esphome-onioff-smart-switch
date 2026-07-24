@@ -49,7 +49,7 @@ cannot be controlled in software.
 You can use the buttons below to install the pre-built firmware directly to your
 device via USB from the browser or download the pre-built firmware to upload manually.
 
-### Switch
+### Generic Switch
 
 The relay is configured as a generic switch that **does not** come back on after
 power loss.
@@ -62,7 +62,7 @@ power loss.
 <esp-web-install-button manifest="./onioff-switch-manifest.json"></esp-web-install-button>
 <!-- markdownlint-enable no-inline-html -->
 
-### Light
+### Light Switch
 
 The relay is configured as a light that **always** comes back on after power loss.
 
@@ -74,7 +74,7 @@ The relay is configured as a light that **always** comes back on after power los
 <esp-web-install-button manifest="./onioff-switch-light-manifest.json"></esp-web-install-button>
 <!-- markdownlint-enable no-inline-html -->
 
-## Fan
+### Fan Switch
 
 The relay is configured as a fan that **does not** come back on after power loss.
 
