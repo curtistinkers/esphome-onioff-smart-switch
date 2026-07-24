@@ -1,10 +1,13 @@
 # ONiOFF smart switch ESPHome Project template
 
-The ONiOFF smart switch is an ESP8285-based device with Tuya firmware. With a small bit of soldering, ot can be flashed to ESPHome (or Tasmota or any other custom firmware).
+The ONiOFF smart switch is an ESP8285-based device with Tuya firmware. With a
+small bit of soldering, ot can be flashed to ESPHome (or Tasmota or any other
+custom firmware).
 
 ## Versions
 
-There is a generic switch, a fan, and a light version on the firmware available for download or web flashing.
+There is a generic switch, a fan, and a light version on the firmware available
+for download or web flashing.
 
 [You can use the firmware web flashing tool by clicking here](https://curtistinkers.github.com/esphome-onioff-smart-switch)
 
@@ -33,4 +36,5 @@ The relay, button, and LED pins are as follows:
 
 ## Notes
 
-Additionally, there is a Red LED which turns on when the relay is engaged. It is hardwired and cannot be controlled in software.
+Additionally, there is a Red LED which turns on when the relay is engaged. It
+is hardwired and cannot be controlled in software.
