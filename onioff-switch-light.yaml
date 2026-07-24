@@ -1,0 +1,24 @@
+# These substitutions allow the end user to override certain values
+substitutions:
+  restore_mode: "ALWAYS_ON"
+
+esphome:
+  name: "onioff-switch-light"
+  friendly_name: "ONiOFF Light Switch"
+  project:
+    name: cblumer.onioff-switch-light
+    version: 1.0.2
+
+# This should point to the public location of this yaml file.
+dashboard_import:
+  package_import_url: github://CurtisBlumer/esphome-onioff-smart-switch/onioff-switch-light.yaml@main
+
+packages:
+  onioff-base: !include
+    file: common/onioff-base.yaml
+    vars:
+      device_name: Light
+      device_type: light
+      device_platform: binary
+      restore_mode: ${restore_mode}
+

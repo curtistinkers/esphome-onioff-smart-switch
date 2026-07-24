@@ -1,0 +1,154 @@
+esphome:
+  name: project-base
+  # Automatically add the mac address to the name
+  # so you can use a single firmware for all devices
+  name_add_mac_suffix: true
+
+  # This will allow for (future) project identification,
+  # configuration and updates.
+  project:
+    name: cblumer.project-base
+    version: 1.0.8
+
+# To be able to get logs from the device via serial and api.
+logger:
+  level: INFO
+
+# API is a requirement of the dashboard import.
+api:
+  on_client_connected:
+    then:
+      - logger.log:
+          format: "Client %s connected to API with IP %s"
+          args: ["client_info.c_str()", "client_address.c_str()"]
+          level: INFO
+          tag: api
+  on_client_disconnected:
+    then:
+      - logger.log:
+          format: "API client disconnected"
+          level: INFO
+          tag: api
+
+# OTA is required for Over-the-Air updating
+ota:
+  - platform: esphome
+    on_begin:
+      then:
+        - logger.log:
+            format: Over-the-Air updating started
+            level: INFO
+            tag: ota
+    on_progress:
+      then:
+        - logger.log:
+            format: "Over-the-Air update progress: %0.1f%%"
+            args: ["x"]
+            level: INFO
+            tag: ota
+    on_end:
+      then:
+        - logger.log:
+            format: Over-the-Air updating completed successfully
+            level: INFO
+            tag: ota
+    on_error:
+      then:
+        - logger.log:
+            format: "Over-the-Air update error: %d"
+            args: ["x"]
+            level: ERROR
+            tag: ota
+
+wifi:
+  # Set up a wifi access point using the device name above
+  ap:
+    password: "12345678"
+  on_connect:
+    then:
+      - logger.log:
+          format: "Wi-Fi connected"
+          level: INFO
+          tag: wifi
+  on_disconnect:
+    then:
+      - logger.log:
+            format: "Wi-Fi disconnected"
+            level: INFO
+            tag: wifi
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device.
+captive_portal:
+
+# Sets up the improv via serial client for Wi-Fi provisioning.
+# Handy if your device has a usb port for the user to add credentials when they first get it.
+improv_serial:
+
+web_server:
+  version: 3
+
+sensor:
+  - platform: uptime
+    name: Uptime
+    entity_category: "diagnostic"
+
+  - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
+    name: "WiFi Signal dB"
+    id: wifi_signal_db
+    update_interval: 60s
+    entity_category: "diagnostic"
+
+  - platform: copy # Reports the WiFi signal strength in %
+    source_id: wifi_signal_db
+    name: "WiFi Signal Percent"
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "Signal %"
+    entity_category: "diagnostic"
+    device_class: ""
+
+binary_sensor:
+  - platform: status
+    name: "Home Assistant Status"
+    entity_category: "diagnostic"
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: IP Address
+      entity_category: "diagnostic"
+      # address_0:
+      #   name: IP Address 0
+      #   entity_category: "diagnostic"
+      # address_1:
+      #   name: IP Address 1
+      #   entity_category: "diagnostic"
+      # address_2:
+      #   name: IP Address 2
+      #   entity_category: "diagnostic"
+      # address_3:
+      #   name: IP Address 3
+      #   entity_category: "diagnostic"
+      # address_4:
+      #   name: IP Address 4
+      #   entity_category: "diagnostic"
+    ssid:
+      name: SSID Connected
+      entity_category: "diagnostic"
+    bssid:
+      name: Connected BSSID
+      entity_category: "diagnostic"
+    mac_address:
+      name: Wi-Fi MAC Address
+      entity_category: "diagnostic"
+    scan_results:
+      name: Latest Scan Results
+      entity_category: "diagnostic"
+    dns_address:
+      name: DNS Address
+      entity_category: "diagnostic"
+
+button:
+  - platform: restart
+    name: "Restart"

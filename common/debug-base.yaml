@@ -1,0 +1,42 @@
+esphome:
+  name: debug-base
+  # Automatically add the mac address to the name
+  # so you can use a single firmware for all devices
+  name_add_mac_suffix: true
+
+  # This will allow for (future) project identification,
+  # configuration and updates.
+  project:
+    name: cblumer.debug-base
+    version: 1.0.0
+
+# Logger must be at least debug (default)
+logger:
+  level: debug
+
+debug:
+  update_interval: 10s
+
+text_sensor:
+  - platform: debug
+    device:
+      name: "Device Info"
+      entity_category: "diagnostic"
+    reset_reason:
+      name: "Reset Reason"
+      entity_category: "diagnostic"
+
+sensor:
+  - platform: debug
+    free:
+      name: "Heap Free"
+      entity_category: "diagnostic"
+    fragmentation:
+      name: "Heap Fragmentation"
+      entity_category: "diagnostic"
+    block:
+      name: "Heap Max Block"
+      entity_category: "diagnostic"
+    loop_time:
+      name: "Loop Time"
+      entity_category: "diagnostic"

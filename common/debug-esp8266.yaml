@@ -1,0 +1,25 @@
+esphome:
+  name: debug-esp8266
+  # Automatically add the mac address to the name
+  # so you can use a single firmware for all devices
+  name_add_mac_suffix: true
+
+  # This will allow for (future) project identification,
+  # configuration and updates.
+  project:
+    name: cblumer.debug-esp8266
+    version: 1.0.1
+
+packages:
+  project-base: !include debug-base.yaml
+
+sensor:
+  - platform: debug
+    fragmentation:
+      name: "Heap Fragmentation"
+      entity_category: "diagnostic"
+
+  - platform: adc
+    pin: VCC
+    name: "VCC Voltage"
+    entity_category: "diagnostic"

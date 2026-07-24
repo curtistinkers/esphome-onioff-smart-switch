@@ -1,0 +1,15 @@
+esphome:
+  name: project-esp8266
+
+  # Allows for (future) project identification, configuration and updates
+  project:
+    name: cblumer.project-esp8266
+    version: 1.0.1
+
+esp8266:
+  board: esp01_1m
+  restore_from_flash: true
+  early_pin_init: false
+
+packages:
+  project-base: !include project-base.yaml

@@ -1,0 +1,59 @@
+esphome:
+  name: onioff-base
+  # For (future) identification, configuration and updates
+  project:
+    name: cblumer.onioff-base
+    version: 1.0.5
+
+packages:
+  project-esp8266:
+    url: https://github.com/CurtisBlumer/esphome-project-defaults
+    ref: main
+    files:
+      - project-esp8266.yaml
+      # - debug-esp8266.yaml
+    refresh: 1d
+  # project-esp8266: !include project-esp8266.yaml
+  # debug-esp8266: !include debug-esp8266.yaml
+
+status_led:
+  pin:
+    number: 1
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 5
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    id: toggle_button
+    internal: true
+    on_press:
+      then:
+        - ${device_type}.toggle: relay_${device_type}
+
+output:
+  - platform: gpio
+    pin: 12
+    id: relay
+
+${device_type}:
+  - platform: ${device_platform}
+    name: ${device_name}
+    id: relay_${device_type}
+    output: relay
+    restore_mode: ${restore_mode}
+    on_turn_on:
+      then:
+        - logger.log:
+            format: ${device_name} turned on
+            level: INFO
+            tag: ${device_type}
+    on_turn_off:
+      then:
+        - logger.log:
+            format: ${device_name} turned off
+            level: INFO
+            tag: ${device_type}
