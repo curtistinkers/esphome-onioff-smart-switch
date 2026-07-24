@@ -25,5 +25,6 @@ packages:
       restore_mode: ${restore_mode}
 
 ${device_type}:
-  id: relay_${device_type}
-  icon: "mdi:fan"
+  - platform: ${device_platform}
+    id: relay_${device_type}
+    icon: "mdi:fan"
