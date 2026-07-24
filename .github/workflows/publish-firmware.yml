@@ -1,9 +1,6 @@
 name: Publish Firmware
 
 on:
-  push:
-    branches:
-      - main
   release:
     types: [published]
 
