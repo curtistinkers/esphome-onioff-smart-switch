@@ -162,6 +162,7 @@ text_sensor:
       name: Wi-Fi MAC Address
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:identifier"
     scan_results:
       name: Latest Scan Results
       entity_category: "diagnostic"
