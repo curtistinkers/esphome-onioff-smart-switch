@@ -8,7 +8,7 @@ esphome:
   # configuration and updates.
   project:
     name: curtistinkers.project-base
-    version: 1.0.10
+    version: 1.1.0
 
 # To be able to get logs from the device via serial and api.
 logger:
