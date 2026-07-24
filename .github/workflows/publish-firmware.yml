@@ -16,11 +16,8 @@ jobs:
       files: onioff-switch.yaml
       # Set the ESPHome version
       esphome-version: 2026.6.5
-      combined-name: onioff-switch-generic
-      # name: Build ONiOFF Generic Switch Firmware
-      # clean: false
-      # manifest_filename: onioff-switch-manifest.json
       #### Modify above here to match your project ####
+      
       release-summary: ${{ github.event.release.body }}
       release-url: ${{ github.event.release.html_url }}
       release-version: ${{ github.event.release.tag_name }}
@@ -34,7 +31,6 @@ jobs:
       files: onioff-switch-light.yaml
       # Set the ESPHome version
       esphome-version: 2026.6.5
-      combined-name: onioff-switch-light
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
@@ -50,7 +46,6 @@ jobs:
       files: onioff-switch-fan.yaml
       # Set the ESPHome version
       esphome-version: 2026.6.5
-      combined-name: onioff-switch-light
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
