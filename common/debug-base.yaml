@@ -7,7 +7,7 @@ esphome:
   # This will allow for (future) project identification,
   # configuration and updates.
   project:
-    name: cblumer.debug-base
+    name: curtistinkers.debug-base
     version: 1.0.0
 
 # Logger must be at least debug (default)

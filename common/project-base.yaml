@@ -7,7 +7,7 @@ esphome:
   # This will allow for (future) project identification,
   # configuration and updates.
   project:
-    name: cblumer.project-base
+    name: curtistinkers.project-base
     version: 1.0.8
 
 # To be able to get logs from the device via serial and api.

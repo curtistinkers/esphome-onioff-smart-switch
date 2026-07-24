@@ -6,12 +6,12 @@ esphome:
   name: "onioff-switch"
   friendly_name: "ONiOFF Switch"
   project:
-    name: cblumer.onioff-switch
+    name: curtistinkers.onioff-switch
     version: 1.0.1
 
 # This should point to the public location of this yaml file.
 dashboard_import:
-  package_import_url: github://CurtisBlumer/esphome-onioff-smart-switch/onioff-switch.yaml@main
+  package_import_url: github://curtistinkers/esphome-onioff-smart-switch/onioff-switch.yaml@main
 
 packages:
   onioff-base: !include

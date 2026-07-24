@@ -7,7 +7,7 @@ esphome:
   # This will allow for (future) project identification,
   # configuration and updates.
   project:
-    name: cblumer.debug-esp8266
+    name: curtistinkers.debug-esp8266
     version: 1.0.1
 
 packages:

@@ -3,7 +3,7 @@ esphome:
 
   # Allows for (future) project identification, configuration and updates
   project:
-    name: cblumer.project-esp8266
+    name: curtistinkers.project-esp8266
     version: 1.0.1
 
 esp8266:
