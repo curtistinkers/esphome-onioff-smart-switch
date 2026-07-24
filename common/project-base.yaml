@@ -8,7 +8,7 @@ esphome:
   # configuration and updates.
   project:
     name: curtistinkers.project-base
-    version: 1.0.9
+    version: 1.0.10
 
 # To be able to get logs from the device via serial and api.
 logger:
@@ -102,6 +102,7 @@ sensor:
     id: wifi_signal_db
     update_interval: 60s
     entity_category: "diagnostic"
+    disabled_by_default: true
 
   - platform: copy # Reports the WiFi signal strength in %
     source_id: wifi_signal_db
@@ -111,17 +112,20 @@ sensor:
     unit_of_measurement: "Signal %"
     entity_category: "diagnostic"
     device_class: ""
+    disabled_by_default: true
 
 binary_sensor:
   - platform: status
     name: "Home Assistant Status"
     entity_category: "diagnostic"
+    disabled_by_default: true
 
 text_sensor:
   - platform: wifi_info
     ip_address:
       name: IP Address
       entity_category: "diagnostic"
+      disabled_by_default: true
       # address_0:
       #   name: IP Address 0
       #   entity_category: "diagnostic"
@@ -140,18 +144,23 @@ text_sensor:
     ssid:
       name: SSID Connected
       entity_category: "diagnostic"
+      disabled_by_default: true
     bssid:
       name: Connected BSSID
       entity_category: "diagnostic"
+      disabled_by_default: true
     mac_address:
       name: Wi-Fi MAC Address
       entity_category: "diagnostic"
+      disabled_by_default: true
     scan_results:
       name: Latest Scan Results
       entity_category: "diagnostic"
+      disabled_by_default: true
     dns_address:
       name: DNS Address
       entity_category: "diagnostic"
+      disabled_by_default: true
 
 button:
   - platform: restart
