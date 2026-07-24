@@ -1,6 +1,6 @@
 # These substitutions allow the end user to override certain values
 substitutions:
-  project_version: "1.0.6"
+  project_version: "1.0.5"
   device_name: "Fan"
   device_type: "fan"
   device_platform: "binary"
