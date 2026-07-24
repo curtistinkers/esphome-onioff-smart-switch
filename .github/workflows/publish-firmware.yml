@@ -1,6 +1,9 @@
 name: Publish Firmware
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [published]
 
@@ -13,7 +16,7 @@ jobs:
     uses: esphome/workflows/.github/workflows/build.yml@9f6577fd37b5cf773ab1b9be929714a0dcd15661  # 2026.7.0
     with:
       #### Modify below here to match your project ####
-      files:
+      files: |
         onioff-switch.yaml
         onioff-switch-light.yaml
         onioff-switch-fan.yaml
