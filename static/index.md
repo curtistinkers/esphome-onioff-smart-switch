@@ -23,7 +23,7 @@ from left to right:
 | 5   | Reset    |
 | 6   | Ground   |
 
-![Board pinout](static/board-pinout.jpg)
+![Board pinout](board-pinout.jpg)
 
 ## GPIO
 
