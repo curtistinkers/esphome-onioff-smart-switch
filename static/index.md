@@ -1,10 +1,13 @@
-# About
+# Web Flashing Tool
+
+## About
 
 Add some information about your project here.
 
-# Installation
+## Installation
 
-You can use the button below to install the pre-built firmware directly to your device via USB from the browser.
+You can use the button below to install the pre-built firmware directly to your
+device via USB from the browser.
 
 <esp-web-install-button manifest="firmware/project-template.manifest.json"></esp-web-install-button>
 
