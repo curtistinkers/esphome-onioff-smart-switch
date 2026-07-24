@@ -23,6 +23,8 @@ from left to right:
 | 5   | Reset    |
 | 6   | Ground   |
 
+![Board pinout](static/board-pinout.jpg)
+
 ## GPIO
 
 The relay, button, and LED GPIO pins are as follows:
