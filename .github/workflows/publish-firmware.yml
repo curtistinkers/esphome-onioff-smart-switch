@@ -8,18 +8,49 @@ permissions:
   contents: write
 
 jobs:
-  build-firmware:
-    name: Build Firmware
+  build-switch-firmware:
+    name: Build and publish ONiOFF generic switch
     uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
     with:
       #### Modify below here to match your project ####
-      files: |
-        project-template-esp32.factory.yaml
-        project-template-esp32-c3.factory.yaml
-        project-template-esp32-c6.factory.yaml
-        project-template-esp32-s3.factory.yaml
+      files: onioff-switch.yaml
+      # Set the ESPHome version
       esphome-version: 2026.6.5
-      combined-name: project-template
+      combined-name: onioff-switch-generic
+      # name: Build ONiOFF Generic Switch Firmware
+      # clean: false
+      # manifest_filename: onioff-switch-manifest.json
+      #### Modify above here to match your project ####
+      release-summary: ${{ github.event.release.body }}
+      release-url: ${{ github.event.release.html_url }}
+      release-version: ${{ github.event.release.tag_name }}
+
+  build-light-firmware:
+    name: Build and publish ONiOFF light switch
+    uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
+    with:
+      #### Modify below here to match your project ####
+      # Set the filenames of your config files here:
+      files: onioff-switch-light.yaml
+      # Set the ESPHome version
+      esphome-version: 2026.6.5
+      combined-name: onioff-switch-light
+      #### Modify above here to match your project ####
+
+      release-summary: ${{ github.event.release.body }}
+      release-url: ${{ github.event.release.html_url }}
+      release-version: ${{ github.event.release.tag_name }}
+  
+  build-fan-firmware:
+    #### Modify below here to match your project ####
+    name: Build and publish ONiOFF fan switch
+    uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
+    with:
+      # Set the filenames of your config files here:
+      files: onioff-switch-fan.yaml
+      # Set the ESPHome version
+      esphome-version: 2026.6.5
+      combined-name: onioff-switch-light
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
@@ -30,6 +61,8 @@ jobs:
     name: Upload to Release
     uses: esphome/workflows/.github/workflows/upload-to-gh-release.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
     needs:
-      - build-firmware
+      - build-switch-firmware
+      - build-light-firmware
+      - build-fan-firmware
     with:
       version: ${{ github.event.release.tag_name }}
