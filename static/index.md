@@ -54,9 +54,9 @@ device via USB from the browser or download the pre-built firmware to upload man
 The relay is configured as a generic switch that **does not** come back on after
 power loss.
 
-[Download ONiOFF Switch Over-the-Air binary file](onioff-switch-esp8266/onioff-switch-esp8266.ota.bin)
+[Download ONiOFF Switch Over-the-Air binary file](firmware/onioff-switch-esp8266.ota.bin)
 
-[Download ONiOFF Switch Factory binary file](onioff-switch-esp8266/onioff-switch-esp8266.factory.bin)
+[Download ONiOFF Switch Factory binary file](firmware/onioff-switch-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
 <esp-web-install-button manifest="./onioff-switch-manifest.json"></esp-web-install-button>
@@ -66,9 +66,9 @@ power loss.
 
 The relay is configured as a light that **always** comes back on after power loss.
 
-[Download ONiOFF Light Switch Over-the-Air binary file](onioff-switch-light-esp8266/onioff-switch-light-esp8266.ota.bin)
+[Download ONiOFF Light Switch Over-the-Air binary file](firmware/onioff-switch-light-esp8266.ota.bin)
 
-[Download ONiOFF Light Switch Factory binary file](onioff-switch-light-esp8266/onioff-switch-light-esp8266.factory.bin)
+[Download ONiOFF Light Switch Factory binary file](firmware/onioff-switch-light-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
 <esp-web-install-button manifest="./onioff-switch-light-manifest.json"></esp-web-install-button>
@@ -78,9 +78,9 @@ The relay is configured as a light that **always** comes back on after power los
 
 The relay is configured as a fan that **does not** come back on after power loss.
 
-[Download ONiOFF Fan Switch Over-the-Air binary file](onioff-switch-fan-esp8266/onioff-switch-fan-esp8266.ota.bin)
+[Download ONiOFF Fan Switch Over-the-Air binary file](firmware/onioff-switch-fan-esp8266.ota.bin)
 
-[Download ONiOFF Fan Switch Factory binary file](onioff-switch-fan-esp8266/onioff-switch-fan-esp8266.factory.bin)
+[Download ONiOFF Fan Switch Factory binary file](firmware/onioff-switch-fan-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
 <esp-web-install-button manifest="./onioff-switch-fan-manifest.json"></esp-web-install-button>
