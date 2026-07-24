@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
           fetch-depth: 0  # need all tags to compute the next patch
 
@@ -32,7 +32,7 @@ jobs:
           fi
           echo "version=$next" >> "$GITHUB_OUTPUT"
 
-      - uses: release-drafter/release-drafter@5de93583980a40bd78603b6dfdcda5b4df377b32  # v7.2.0
+      - uses: release-drafter/release-drafter@eada3c96a64734dd381cfbda23511034e328ddb0  # v7.6.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
