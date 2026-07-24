@@ -4,13 +4,3 @@ config:
     # no-inline-html: false
 
 gitignore: true
-
-# Disable different rules for some files
-overrides:
-  # Add a rule for GitHub Pages
-  - filter:
-      # Regex required for working on Windows
-      - "static[/\]*.md"
-    config:
-      no-inline-html: false
-    combine: merge
