@@ -7,7 +7,7 @@ esphome:
   friendly_name: "ONiOFF Light Switch"
   project:
     name: curtistinkers.onioff-switch-light
-    version: 1.0.3
+    version: 1.0.4
 
 # This should point to the public location of this yaml file.
 dashboard_import:
