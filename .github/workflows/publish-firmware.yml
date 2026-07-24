@@ -34,7 +34,7 @@ jobs:
       # Set the ESPHome version
       esphome-version: 2026.6.5
       # Removes the esp8266 suffix
-      combined-name: onioff-switch-fan
+      combined-name: onioff-switch
       #### Modify above here to match your project ####
       
       release-summary: ${{ github.event.release.body }}
@@ -51,7 +51,7 @@ jobs:
       # Set the ESPHome version
       esphome-version: 2026.6.5
       # Removes the esp8266 suffix
-      combined-name: onioff-switch-fan
+      combined-name: onioff-switch-light
       #### Modify above here to match your project ####
 
       release-summary: ${{ github.event.release.body }}
