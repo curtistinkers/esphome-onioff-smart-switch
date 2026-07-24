@@ -3,7 +3,7 @@ esphome:
   # For (future) identification, configuration and updates
   project:
     name: curtistinkers.onioff-base
-    version: 1.0.5
+    version: 1.0.6
 
 packages:
   project-esp8266: !include project-esp8266.yaml
@@ -14,22 +14,31 @@ status_led:
 
 binary_sensor:
   - platform: gpio
+    id: toggle_button
     pin:
       number: 5
       inverted: true
       mode:
         input: true
         pullup: true
-    id: toggle_button
     internal: true
     on_press:
       then:
         - ${device_type}.toggle: relay_${device_type}
+        - logger.log:
+            format: ${device_name} button pressed
+            level: DEBUG
+            tag: ${device_type}
+    on_click:
+      min_length: 5s
+      max_length: 10s
+      then:
+        - button.press: factory_reset_button
 
 output:
   - platform: gpio
-    pin: 12
     id: relay
+    pin: 12
 
 ${device_type}:
   - platform: ${device_platform}

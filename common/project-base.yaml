@@ -8,7 +8,7 @@ esphome:
   # configuration and updates.
   project:
     name: curtistinkers.project-base
-    version: 1.0.8
+    version: 1.0.9
 
 # To be able to get logs from the device via serial and api.
 logger:
@@ -88,6 +88,10 @@ improv_serial:
 web_server:
   version: 3
 
+factory_reset:
+  max_delay: 5s
+  resets_required: 3
+
 sensor:
   - platform: uptime
     name: Uptime
@@ -152,3 +156,7 @@ text_sensor:
 button:
   - platform: restart
     name: "Restart"
+  - platform: factory_reset
+    name: Factory Reset
+    id: factory_reset_button
+    disabled_by_default: true
