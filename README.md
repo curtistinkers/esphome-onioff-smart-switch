@@ -48,7 +48,37 @@ cannot be controlled in software.
 
 ## Installation
 
-You can use the link below to install the pre-built firmware directly to your
-device via USB from the browser.
+You can use the links below to download a pre-built firmware to upload manually.
+You can also install a pre-built firmware directly to your device via USB from
+the browser.
+
+### Web flashing tool
 
 [Access the firmware web flashing tool by clicking here](https://curtistinkers.github.com/esphome-onioff-smart-switch)
+
+### Downloads
+
+#### Generic Switch
+
+The relay is configured as a generic switch that **does not** come back on after
+power loss.
+
+[Download ONiOFF Switch Over-the-Air binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-esp8266.ota.bin)
+
+[Download ONiOFF Switch Factory binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-esp8266.factory.bin)
+
+#### Light Switch
+
+The relay is configured as a light that **always** comes back on after power loss.
+
+[Download ONiOFF Light Switch Over-the-Air binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-light-esp8266.ota.bin)
+
+[Download ONiOFF Light Switch Factory binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-light-esp8266.factory.bin)
+
+#### Fan Switch
+
+The relay is configured as a fan that **does not** come back on after power loss.
+
+[Download ONiOFF Fan Switch Over-the-Air binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-fan-esp8266.ota.bin)
+
+[Download ONiOFF Fan Switch Factory binary file](https://curtistinkers.github.io/esphome-onioff-smart-switch/firmware/onioff-switch-fan-esp8266.factory.bin)
