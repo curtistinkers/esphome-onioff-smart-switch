@@ -1,7 +1,7 @@
-# ONiOFF smart switch ESPHome Project template
+# ONiOFF Smart Switch Made for ESPHome
 
 The ONiOFF smart switch is an ESP8285-based device with Tuya firmware. With a
-small bit of soldering, ot can be flashed to ESPHome (or Tasmota or any other
+small bit of soldering, it can be flashed to ESPHome (or Tasmota or any other
 custom firmware).
 
 ## Versions
@@ -9,11 +9,10 @@ custom firmware).
 There is a generic switch, a fan, and a light version on the firmware available
 for download or web flashing.
 
-[You can use the firmware web flashing tool by clicking here](https://curtistinkers.github.com/esphome-onioff-smart-switch)
-
 ## Serial interface pins
 
-With the button closest to you, the pins are as follows, going left to right:
+With the button and solder pads closest to you, the pins are as follows, going
+from left to right:
 
 | Pin | Function |
 | --- | -------- |
@@ -26,15 +25,28 @@ With the button closest to you, the pins are as follows, going left to right:
 
 ## GPIO
 
-The relay, button, and LED pins are as follows:
+The relay, button, and LED GPIO pins are as follows:
 
-| Pin | Function |
-| --- | -------- |
-| 1   | Blue LED |
-| 5   | Button   |
-| 12  | Relay    |
+| Pin | Component | Defaults                                    |
+| --- | --------- | ------------------------------------------- |
+| 1   | Blue LED  | Status light                                |
+| 5   | Button    | Relay on click; factory reset on long press |
+| 12  | Relay     | Normally open                               |
+
+## Factory Reset
+
+You can factory reset the device by enabling the `Factory Reset` button in Home
+Assistant, using `Factory Reset` button on the built-in web interface, or holding
+the physical button for 5-10 seconds.
 
 ## Notes
 
-Additionally, there is a Red LED which turns on when the relay is engaged. It
-is hardwired and cannot be controlled in software.
+There is a Red LED which turns on when the relay is engaged. It is hardwired and
+cannot be controlled in software.
+
+## Installation
+
+You can use the link below to install the pre-built firmware directly to your
+device via USB from the browser.
+
+[Access the firmware web flashing tool by clicking here](https://curtistinkers.github.com/esphome-onioff-smart-switch)
