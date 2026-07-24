@@ -1,5 +1,10 @@
 # These substitutions allow the end user to override certain values
 substitutions:
+  project_version: "1.0.6"
+  device_name: "Light"
+  device_type: "light"
+  device_platform: "binary"
+  device_icon: "mdi:lightbulb"
   restore_mode: "ALWAYS_ON"
 
 esphome:
@@ -7,7 +12,7 @@ esphome:
   friendly_name: "ONiOFF Light Switch"
   project:
     name: curtistinkers.onioff-switch-light
-    version: 1.0.4
+    version: ${project_version}
 
 # This should point to the public location of this yaml file.
 dashboard_import:
@@ -17,8 +22,9 @@ packages:
   onioff-base: !include
     file: common/onioff-base.yaml
     vars:
-      device_name: Light
-      device_type: light
-      device_platform: binary
+      device_name: ${device_name}
+      device_type: ${device_type}
+      device_platform: ${device_platform}
+      device_icon: ${device_icon}
       restore_mode: ${restore_mode}
 

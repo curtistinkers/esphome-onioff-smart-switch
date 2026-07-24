@@ -1,15 +1,18 @@
 # These substitutions allow the end user to override certain values
 substitutions:
-  restore_mode: "ALWAYS_OFF"
-  device_type: "fan"
+  project_version: "1.0.6"
   device_name: "Fan"
+  device_type: "fan"
+  device_platform: "binary"
+  device_icon: "mdi:fan"
+  restore_mode: "ALWAYS_OFF"
 
 esphome:
   name: "onioff-switch-fan"
   friendly_name: "ONiOFF Fan Switch"
   project:
     name: curtistinkers.onioff-switch-fan
-    version: 1.0.5
+    version: ${project_version}
 
 # This should point to the public location of this yaml file.
 dashboard_import:
@@ -21,10 +24,6 @@ packages:
     vars:
       device_name: ${device_name}
       device_type: ${device_type}
-      device_platform: binary
+      device_platform: ${device_platform}
+      device_icon: ${device_icon}
       restore_mode: ${restore_mode}
-
-${device_type}:
-  - platform: ${device_platform}
-    id: relay_${device_type}
-    icon: "mdi:fan"
