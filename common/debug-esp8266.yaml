@@ -1,3 +1,6 @@
+substitutions:
+  project_version: "1.0.2"
+
 esphome:
   name: debug-esp8266
   # Automatically add the mac address to the name
@@ -8,7 +11,7 @@ esphome:
   # configuration and updates.
   project:
     name: curtistinkers.debug-esp8266
-    version: 1.0.1
+    version: ${project_version}
 
 packages:
   project-base: !include debug-base.yaml

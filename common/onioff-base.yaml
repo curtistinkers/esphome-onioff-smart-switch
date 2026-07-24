@@ -1,9 +1,12 @@
+substitutions:
+  project_version: "1.0.8"
+
 esphome:
   name: onioff-base
   # For (future) identification, configuration and updates
   project:
     name: curtistinkers.onioff-base
-    version: 1.0.6
+    version: ${project_version}
 
 packages:
   project-esp8266: !include project-esp8266.yaml
@@ -44,6 +47,7 @@ ${device_type}:
   - platform: ${device_platform}
     name: ${device_name}
     id: relay_${device_type}
+    icon: ${device_icon}
     output: relay
     restore_mode: ${restore_mode}
     on_turn_on:

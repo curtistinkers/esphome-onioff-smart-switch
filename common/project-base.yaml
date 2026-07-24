@@ -1,3 +1,6 @@
+substitutions:
+  project_version: "1.1.1"
+
 esphome:
   name: project-base
   # Automatically add the mac address to the name
@@ -8,7 +11,7 @@ esphome:
   # configuration and updates.
   project:
     name: curtistinkers.project-base
-    version: 1.1.0
+    version: ${project_version}
 
 # To be able to get logs from the device via serial and api.
 logger:
