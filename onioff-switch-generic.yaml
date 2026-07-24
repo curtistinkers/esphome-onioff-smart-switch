@@ -3,7 +3,7 @@ substitutions:
   project_version: "1.0.5"
   device_name: "Switch"
   device_type: "switch"
-  device_platform: "binary"
+  device_platform: "output"
   device_icon: "mdi:toggle-switch-variant"
   restore_mode: "ALWAYS_OFF"
 
