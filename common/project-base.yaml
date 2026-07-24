@@ -103,6 +103,7 @@ sensor:
     update_interval: 60s
     entity_category: "diagnostic"
     disabled_by_default: true
+    icon: "mdi:wifi-strength-3"
 
   - platform: copy # Reports the WiFi signal strength in %
     source_id: wifi_signal_db
@@ -113,12 +114,14 @@ sensor:
     entity_category: "diagnostic"
     device_class: ""
     disabled_by_default: true
+    icon: "mdi:wifi-strength-3"
 
 binary_sensor:
   - platform: status
     name: "Home Assistant Status"
     entity_category: "diagnostic"
     disabled_by_default: true
+    icon: "mdi:home-assistant"
 
 text_sensor:
   - platform: wifi_info
@@ -126,6 +129,7 @@ text_sensor:
       name: IP Address
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:ip-network"
       # address_0:
       #   name: IP Address 0
       #   entity_category: "diagnostic"
@@ -145,10 +149,12 @@ text_sensor:
       name: SSID Connected
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:router-wireless"
     bssid:
       name: Connected BSSID
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:router-wireless-settings"
     mac_address:
       name: Wi-Fi MAC Address
       entity_category: "diagnostic"
@@ -157,10 +163,12 @@ text_sensor:
       name: Latest Scan Results
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:wifi-refresh"
     dns_address:
       name: DNS Address
       entity_category: "diagnostic"
       disabled_by_default: true
+      icon: "mdi:dns"
 
 button:
   - platform: restart

@@ -1,6 +1,8 @@
 # These substitutions allow the end user to override certain values
 substitutions:
   restore_mode: "ALWAYS_OFF"
+  device_type: "fan"
+  device_name: "Fan"
 
 esphome:
   name: "onioff-switch-fan"
@@ -17,7 +19,11 @@ packages:
   onioff-base: !include
     file: common/onioff-base.yaml
     vars:
-      device_name: Fan
-      device_type: fan
+      device_name: ${device_name}
+      device_type: ${device_type}
       device_platform: binary
       restore_mode: ${restore_mode}
+
+${device_type}:
+  id: relay_${device_type}
+  icon: "mdi:fan"
