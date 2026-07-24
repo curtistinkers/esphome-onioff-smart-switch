@@ -22,7 +22,7 @@ jobs:
       matrix:
         #### Modify below here to match your project ####
         file:
-          - onioff-switch.yaml
+          - onioff-switch-generic.yaml
           - onioff-switch-light.yaml
           - onioff-switch-fan.yaml
         #### Modify above here to match your project ####

@@ -3,15 +3,15 @@ substitutions:
   restore_mode: "ALWAYS_OFF"
 
 esphome:
-  name: "onioff-switch"
-  friendly_name: "ONiOFF Switch"
+  name: "onioff-switch-generic"
+  friendly_name: "ONiOFF Generic Switch"
   project:
-    name: curtistinkers.onioff-switch
-    version: 1.0.1
+    name: curtistinkers.onioff-switch-generic
+    version: 1.0.2
 
 # This should point to the public location of this yaml file.
 dashboard_import:
-  package_import_url: github://curtistinkers/esphome-onioff-smart-switch/onioff-switch.yaml@main
+  package_import_url: github://curtistinkers/esphome-onioff-smart-switch/onioff-switch-generic.yaml@main
 
 packages:
   onioff-base: !include

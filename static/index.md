@@ -54,12 +54,12 @@ device via USB from the browser or download the pre-built firmware to upload man
 The relay is configured as a generic switch that **does not** come back on after
 power loss.
 
-[Download ONiOFF Switch Over-the-Air binary file](firmware/onioff-switch-esp8266.ota.bin)
+[Download ONiOFF Switch Over-the-Air binary file](firmware/onioff-switch-generic-esp8266.ota.bin)
 
-[Download ONiOFF Switch Factory binary file](firmware/onioff-switch-esp8266.factory.bin)
+[Download ONiOFF Switch Factory binary file](firmware/onioff-switch-generic-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
-<esp-web-install-button manifest="./onioff-switch-manifest.json"></esp-web-install-button>
+<esp-web-install-button manifest="./onioff-switch-generic-manifest.json"></esp-web-install-button>
 <!-- markdownlint-enable no-inline-html -->
 
 ### Light Switch

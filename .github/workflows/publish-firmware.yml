@@ -14,7 +14,7 @@ jobs:
     with:
       #### Modify below here to match your project ####
       files: |
-        onioff-switch.yaml
+        onioff-switch-generic.yaml
         onioff-switch-light.yaml
         onioff-switch-fan.yaml
       # Set the ESPHome version
