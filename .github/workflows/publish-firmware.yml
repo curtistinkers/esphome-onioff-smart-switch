@@ -8,12 +8,15 @@ permissions:
   contents: write
 
 jobs:
-  build-switch-firmware:
-    name: Build and publish ONiOFF generic switch
+  build-firmware:
+    name: Build and publish firmware
     uses: esphome/workflows/.github/workflows/build.yml@9f6577fd37b5cf773ab1b9be929714a0dcd15661  # 2026.7.0
     with:
       #### Modify below here to match your project ####
-      files: onioff-switch.yaml
+      files:
+        onioff-switch.yaml
+        onioff-switch-light.yaml
+        onioff-switch-fan.yaml
       # Set the ESPHome version
       esphome-version: 2026.6.5
       #### Modify above here to match your project ####
@@ -22,42 +25,54 @@ jobs:
       release-url: ${{ github.event.release.html_url }}
       release-version: ${{ github.event.release.tag_name }}
 
-  build-light-firmware:
-    name: Build and publish ONiOFF light switch
-    uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
-    with:
-      #### Modify below here to match your project ####
-      # Set the filenames of your config files here:
-      files: onioff-switch-light.yaml
-      # Set the ESPHome version
-      esphome-version: 2026.6.5
-      #### Modify above here to match your project ####
+  # build-switch-firmware:
+  #   name: Build and publish ONiOFF generic switch
+  #   uses: esphome/workflows/.github/workflows/build.yml@9f6577fd37b5cf773ab1b9be929714a0dcd15661  # 2026.7.0
+  #   with:
+  #     #### Modify below here to match your project ####
+  #     files: onioff-switch.yaml
+  #     # Set the ESPHome version
+  #     esphome-version: 2026.6.5
+  #     #### Modify above here to match your project ####
+      
+  #     release-summary: ${{ github.event.release.body }}
+  #     release-url: ${{ github.event.release.html_url }}
+  #     release-version: ${{ github.event.release.tag_name }}
 
-      release-summary: ${{ github.event.release.body }}
-      release-url: ${{ github.event.release.html_url }}
-      release-version: ${{ github.event.release.tag_name }}
+  # build-light-firmware:
+  #   name: Build and publish ONiOFF light switch
+  #   uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
+  #   with:
+  #     #### Modify below here to match your project ####
+  #     # Set the filenames of your config files here:
+  #     files: onioff-switch-light.yaml
+  #     # Set the ESPHome version
+  #     esphome-version: 2026.6.5
+  #     #### Modify above here to match your project ####
+
+  #     release-summary: ${{ github.event.release.body }}
+  #     release-url: ${{ github.event.release.html_url }}
+  #     release-version: ${{ github.event.release.tag_name }}
   
-  build-fan-firmware:
-    #### Modify below here to match your project ####
-    name: Build and publish ONiOFF fan switch
-    uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
-    with:
-      # Set the filenames of your config files here:
-      files: onioff-switch-fan.yaml
-      # Set the ESPHome version
-      esphome-version: 2026.6.5
-      #### Modify above here to match your project ####
+  # build-fan-firmware:
+  #   #### Modify below here to match your project ####
+  #   name: Build and publish ONiOFF fan switch
+  #   uses: esphome/workflows/.github/workflows/build.yml@025a1e6255610c498ed590403b7e510b69e474df  # 2026.4.1
+  #   with:
+  #     # Set the filenames of your config files here:
+  #     files: onioff-switch-fan.yaml
+  #     # Set the ESPHome version
+  #     esphome-version: 2026.6.5
+  #     #### Modify above here to match your project ####
 
-      release-summary: ${{ github.event.release.body }}
-      release-url: ${{ github.event.release.html_url }}
-      release-version: ${{ github.event.release.tag_name }}
+  #     release-summary: ${{ github.event.release.body }}
+  #     release-url: ${{ github.event.release.html_url }}
+  #     release-version: ${{ github.event.release.tag_name }}
 
   upload-to-release:
     name: Upload to Release
     uses: esphome/workflows/.github/workflows/upload-to-gh-release.yml@9f6577fd37b5cf773ab1b9be929714a0dcd15661  # 2026.7.0
     needs:
-      - build-switch-firmware
-      - build-light-firmware
-      - build-fan-firmware
+      - build-firmware
     with:
       version: ${{ github.event.release.tag_name }}
