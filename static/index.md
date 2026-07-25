@@ -61,7 +61,7 @@ power loss.
 [Download ONiOFF Switch Factory binary file](firmware/onioff-switch-generic-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
-<esp-web-install-button manifest="./onioff-switch-generic-manifest.json"></esp-web-install-button>
+<esp-web-install-button manifest="firmware/onioff-switch-generic.manifest.json"></esp-web-install-button>
 <!-- markdownlint-enable no-inline-html -->
 
 ### Light Switch
@@ -73,7 +73,7 @@ The relay is configured as a light that **always** comes back on after power los
 [Download ONiOFF Light Switch Factory binary file](firmware/onioff-switch-light-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
-<esp-web-install-button manifest="./onioff-switch-light-manifest.json"></esp-web-install-button>
+<esp-web-install-button manifest="firmware/onioff-switch-light.manifest.json"></esp-web-install-button>
 <!-- markdownlint-enable no-inline-html -->
 
 ### Fan Switch
@@ -85,7 +85,7 @@ The relay is configured as a fan that **does not** come back on after power loss
 [Download ONiOFF Fan Switch Factory binary file](firmware/onioff-switch-fan-esp8266.factory.bin)
 
 <!-- markdownlint-disable no-inline-html -->
-<esp-web-install-button manifest="./onioff-switch-fan-manifest.json"></esp-web-install-button>
+<esp-web-install-button manifest="firmware/onioff-switch-fan.manifest.json"></esp-web-install-button>
 
 <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
 <!-- markdownlint-enable no-inline-html -->
