@@ -1,4 +1,4 @@
-# ONiOFF Smart Switch Made for ESPHome
+# ESPHome for ONiOFF Smart Switch
 
 The ONiOFF smart switch is an ESP8285-based device with Tuya firmware. With a
 small bit of soldering, it can be flashed to ESPHome (or Tasmota or any other
