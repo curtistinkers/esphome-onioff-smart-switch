@@ -18,7 +18,7 @@ jobs:
         onioff-switch-light.yaml
         onioff-switch-fan.yaml
       # Set the ESPHome version
-      esphome-version: 2026.6.5
+      esphome-version: 2026.7.2
       #### Modify above here to match your project ####
       
       release-summary: ${{ github.event.release.body }}
