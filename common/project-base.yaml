@@ -3,6 +3,7 @@ substitutions:
 
 esphome:
   name: project-base
+  minimum-version: 2026.7.2
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
   name_add_mac_suffix: true
